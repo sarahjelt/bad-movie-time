@@ -136,24 +136,30 @@ class App extends Component {
         key={item.id}
         className="list-group-item d-flex justify-content-between align-items-center"
       >
-        <span
-          className={`movie-title mr-2 ${
-            this.state.viewCompleted ? "completed-movie" : ""
-          }`}
-          title={item.description}
-        >
-          {item.title}
-        </span>
-        <img src={item.poster} width="100" alt={item.title + " poster"} />
-        <span>
-          <button onClick={() => this.editItem(item)} >
-            {" "}
-            Edit{" "}
-          </button>
-          <button onClick={() => this.handleDelete(item)} >
-            Delete{" "}
-          </button>
-        </span>
+        <div className="movie-title">
+          <span
+            className={`movie-title mr-2 ${
+              this.state.viewCompleted ? "completed-movie" : ""
+            }`}
+            title={item.description}
+          >
+            {item.title}
+          </span>
+        </div>
+        <div className="movie-image">
+          <img src={item.poster} width="100" alt={item.title + " poster"} />
+        </div>
+        <div className="buttonz">
+          <span>
+            <button onClick={() => this.editItem(item)} >
+              {" "}
+              Edit{" "}
+            </button>
+            <button onClick={() => this.handleDelete(item)} >
+              Delete{" "}
+            </button>
+          </span>
+        </div>
       </li>
       )
     )
@@ -270,7 +276,7 @@ class App extends Component {
                   Add Movie
                 </button>
               </div>*/}
-              <div>
+              <div className="search-comp">
                 <Search
                   results={this.results}
                   onSearch={this.onSearch}

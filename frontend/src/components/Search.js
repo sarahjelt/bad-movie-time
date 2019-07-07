@@ -56,7 +56,7 @@ export default class Search extends Component {
   render() {
     const { onSave } = this.props;
     return (
-      <div>
+      <div className="inner-search-comp">
         <form>
           <input
               placeholder='Search...'
@@ -81,12 +81,13 @@ export default class Search extends Component {
           this.state.results.map(result => (
             <div key={result.id}>
               <h4>{result.title}</h4>
-              <span>{result.description}</span><br />
-              <img src={result.poster} width="100" alt={result.title + " poster"} />
-              <button onClick={() => onSave(result)}>
-                Save
-              </button>
-              <br />
+              <p>{result.description}</p>
+              <div className="search-res-poster">
+                <img src={result.poster} width="100" alt={result.title + " poster"} />
+                <button onClick={() => onSave(result)}>
+                  Save
+                </button>
+              </div>
             </div>
           ))
         ) : null }
