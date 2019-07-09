@@ -155,7 +155,7 @@ class App extends Component {
               {" "}
               Edit{" "}
             </button>
-            <button onClick={() => this.handleDelete(item)} >
+            <button className="delete-btn" onClick={() => this.handleDelete(item)} >
               Delete{" "}
             </button>
           </span>
