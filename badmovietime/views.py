@@ -10,6 +10,9 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 from .serializers import MovieSerializer, UserSerializer, UserSerializerWithToken
 from .models import Movie
+from django.views.generic import TemplateView
+
+catchall = TemplateView.as_view(template_name='index.html')
 
 class MovieView(viewsets.ModelViewSet):
   serializer_class = MovieSerializer
