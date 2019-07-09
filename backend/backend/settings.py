@@ -26,7 +26,9 @@ SECRET_KEY = '!)(bfkd1)i0r!zy!@6*n8tbl4p!6-2r+9z47j)gzp^p3@f79r5'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'bad-movie-time.herokuapp.com',
+]
 
 
 # Application definition
