@@ -1,1 +1,1 @@
-web: gunicorn badmovietime.wsgi
+web: gunicorn backend.wsgi
