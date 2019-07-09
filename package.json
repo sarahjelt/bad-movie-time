@@ -5,7 +5,7 @@
     "node": "10.15.3"
   },
   "main": "index.js",
-  "repository": "",
+  "repository": "sarahjelt/bad-movie-time",
   "author": "Sara Hjelt",
   "license": "MIT",
   "private": true,
