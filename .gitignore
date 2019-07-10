@@ -12,6 +12,8 @@ venv/
 
 staticfiles/*
 
+build/
+
 # Node modules
 node_modules/
 npm-debug.log

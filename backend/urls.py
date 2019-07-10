@@ -19,12 +19,14 @@ from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
 from badmovietime import views
+from .views import catchall
 from rest_framework_jwt.views import obtain_jwt_token
 
 router = routers.DefaultRouter()
 router.register(r'movies', views.MovieView, 'movie')
 
 urlpatterns = [
+    path('', catchall),
     path('admin/', admin.site.urls),
     path('api/', include(router.urls)),
     path('token-auth/', obtain_jwt_token),

@@ -14,8 +14,8 @@ import os
 import datetime
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-REACT_APP_DIR = os.path.abspath(os.path.join(BASE_DIR,"../..", "frontend"))
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+REACT_APP_DIR = os.path.join(BASE_DIR,"..", "frontend")
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
@@ -149,6 +149,10 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 STATICFILES_DIRS = [
     os.path.join(REACT_APP_DIR, 'build', 'static'),
 ]
+STATICFILES_STORAGE = (
+    'whitenoise.storage.CompressedManifestStaticFilesStorage')
+
+WHITENOISE_ROOT = os.path.join(REACT_APP_DIR, 'build', 'root')
 
 CORS_ORIGIN_WHITELIST = [
     'http://localhost:3000',
