@@ -12,7 +12,7 @@ venv/
 
 staticfiles/*
 
-build/
+# build/
 
 # Node modules
 node_modules/
