@@ -11,6 +11,8 @@ db.sqlite3
 venv/
 
 staticfiles/*
+!staticfiles/.gitkeep
+
 
 build/
 
