@@ -28,7 +28,7 @@ class App extends Component {
   }
   componentWillMount() {
     if (this.state.logged_in) {
-      fetch('http://localhost:8000/badmovietime/current_user', {
+      fetch('/badmovietime/current_user', {
         headers: {
           Authorization: `Token ${localStorage.getItem('token')}`
         }
@@ -42,7 +42,7 @@ class App extends Component {
   }
   componentDidMount() {
     if (this.state.logged_in) {
-      fetch('http://localhost:8000/badmovietime/current_user', {
+      fetch('/badmovietime/current_user', {
         headers: {
           Authorization: `Token ${localStorage.getItem('token')}`
         }
@@ -62,7 +62,7 @@ class App extends Component {
 
   handleLogin = (e, data) => {
     e.preventDefault();
-    fetch('http://localhost:8000/token-auth/', {
+    fetch('/token-auth/', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -83,7 +83,7 @@ class App extends Component {
 
   handleSignup = (e, data) => {
     e.preventDefault();
-    fetch('http://localhost:8000/badmovietime/users/', {
+    fetch('/badmovietime/users/', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -174,14 +174,14 @@ class App extends Component {
     this.toggle();
     if (item.id) {
       axios
-        .put(`http://localhost:8000/api/movies/${item.id}/`, item, {headers: {
+        .put(`/api/movies/${item.id}/`, item, {headers: {
           Authorization: `Token ${localStorage.getItem('token')}`
         }})
         .then(res => this.refreshList());
       return;
     }
     axios
-      .post("http://localhost:8000/api/movies/", item, {headers: {
+      .post("/api/movies/", item, {headers: {
           Authorization: `Token ${localStorage.getItem('token')}`
         }})
       .then(res => this.refreshList());
@@ -189,7 +189,7 @@ class App extends Component {
   handleSearchSubmit = item => {
     // console.log('problem? 4', item)
     axios
-      .post("http://localhost:8000/api/movies/", item, {headers: {
+      .post("/api/movies/", item, {headers: {
           Authorization: `Token ${localStorage.getItem('token')}`
         }})
       .then(res => this.refreshList());
@@ -198,14 +198,14 @@ class App extends Component {
   handleDelete = item => {
     // console.log('problem? 4.5')
     axios
-      .delete(`http://localhost:8000/api/movies/${item.id}`, {headers: {
+      .delete(`/api/movies/${item.id}`, {headers: {
           Authorization: `Token ${localStorage.getItem('token')}`
         }})
       .then(res => this.refreshList());
   };
   createItem = () => {
     // console.log('problem? 5', this.state.username, this.state.userid, this.state.logged_in)
-    fetch('http://localhost:8000/badmovietime/current_user', {
+    fetch('/badmovietime/current_user', {
         headers: {
           Authorization: `Token ${localStorage.getItem('token')}`
         }
