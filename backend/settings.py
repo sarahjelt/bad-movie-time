@@ -27,7 +27,9 @@ SECRET_KEY = '!)(bfkd1)i0r!zy!@6*n8tbl4p!6-2r+9z47j)gzp^p3@f79r5'
 DEBUG = True
 
 ALLOWED_HOSTS = [
+    '0.0.0.0',
     'bad-movie-time.herokuapp.com',
+    '127.0.0.1',
     'localhost',
 ]
 
@@ -53,7 +55,7 @@ MIDDLEWARE = [
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
+    # 'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -152,13 +154,13 @@ REST_FRAMEWORK = {
 }
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
-STATICFILES_DIRS = [os.path.join(REACT_APP_DIR, 'build', 'static')]
-
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+STATIC_URL = '/static/'
 
 STATIC_ROOT = os.path.join(BASE_DIR, '..', 'staticfiles')
 
-STATIC_URL = '/static/'
+STATICFILES_DIRS = [os.path.join(REACT_APP_DIR, 'build', 'static')]
 
 WHITENOISE_ROOT = os.path.join(REACT_APP_DIR, 'build', 'root')
 
