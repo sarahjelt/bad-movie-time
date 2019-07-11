@@ -1,1 +1,2 @@
-web: gunicorn --pythonpath backend backend.wsgi --log-file -
+release: python manage.py migrate
+web: waitress-serve backend.wsgi:application --log-file -

@@ -55,7 +55,7 @@ MIDDLEWARE = [
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    # 'django.middleware.csrf.CsrfViewMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -86,27 +86,27 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
 # PROD
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'd8fbb9ugj51a90',
-        'USER': 'cdrrqwcfkhrwmr',
-        'PASSWORD': '3cd8c6636746906f666f084e655d9c23bf11bcb603ee8985e69a027e1585024a',
-        'HOST': 'ec2-174-129-29-101.compute-1.amazonaws.com',
-        'PORT': '5432',
-    }
-}
-# DEV
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'bad_movie_time',
-#         'USER': 'sarahjelt',
-#         'PASSWORD': 'password',
-#         'HOST': 'localhost',
+#         'NAME': 'd8fbb9ugj51a90',
+#         'USER': 'cdrrqwcfkhrwmr',
+#         'PASSWORD': '3cd8c6636746906f666f084e655d9c23bf11bcb603ee8985e69a027e1585024a',
+#         'HOST': 'ec2-174-129-29-101.compute-1.amazonaws.com',
 #         'PORT': '5432',
 #     }
 # }
+# DEV
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'bad_movie_time',
+        'USER': 'sarahjelt',
+        'PASSWORD': 'password',
+        'HOST': 'localhost',
+        'PORT': '5432',
+    }
+}
 
 
 # Password validation
@@ -148,8 +148,8 @@ REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_jwt.authentication.JSONWebTokenAuthentication',
         'rest_framework.authentication.TokenAuthentication',
-        'rest_framework.authentication.SessionAuthentication',
-        'rest_framework.authentication.BasicAuthentication',
+        # 'rest_framework.authentication.SessionAuthentication',
+        # 'rest_framework.authentication.BasicAuthentication',
     ),
 }
 # Static files (CSS, JavaScript, Images)
