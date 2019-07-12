@@ -116,7 +116,7 @@ class App extends Component {
   refreshList = () => {
     // console.log('problem?', this.state.username, this.state.userid, this.state.logged_in)
     axios
-      .get("/api/movies/")
+      .get("/api/movies/", {headers: { Authorization: `Token ${localStorage.getItem('token')}`}})
       .then(res => this.setState({ movies: res.data }))
       .catch(err => console.log(err));
   };

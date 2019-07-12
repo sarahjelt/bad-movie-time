@@ -15,9 +15,6 @@ class MovieView(viewsets.ModelViewSet):
   serializer_class = MovieSerializer
   queryset = Movie.objects.all()
 
-  # def detail(request):
-  #   return render(request, '/')
-
 @api_view(['GET'])
 def current_user(request):
   """ Determine current user by token, return data """

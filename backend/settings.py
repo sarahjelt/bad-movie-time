@@ -86,27 +86,27 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
 # PROD
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'd8fbb9ugj51a90',
-        'USER': 'cdrrqwcfkhrwmr',
-        'PASSWORD': '3cd8c6636746906f666f084e655d9c23bf11bcb603ee8985e69a027e1585024a',
-        'HOST': 'ec2-174-129-29-101.compute-1.amazonaws.com',
-        'PORT': '5432',
-    }
-}
-# DEV
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'bad_movie_time',
-#         'USER': 'sarahjelt',
-#         'PASSWORD': 'password',
-#         'HOST': 'localhost',
+#         'NAME': 'd8fbb9ugj51a90',
+#         'USER': 'cdrrqwcfkhrwmr',
+#         'PASSWORD': '3cd8c6636746906f666f084e655d9c23bf11bcb603ee8985e69a027e1585024a',
+#         'HOST': 'ec2-174-129-29-101.compute-1.amazonaws.com',
 #         'PORT': '5432',
 #     }
 # }
+# DEV
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'bad_movie_time',
+        'USER': 'sarahjelt',
+        'PASSWORD': 'password',
+        'HOST': 'localhost',
+        'PORT': '5432',
+    }
+}
 
 
 # Password validation
@@ -167,6 +167,7 @@ WHITENOISE_ROOT = os.path.join(REACT_APP_DIR, 'build', 'root')
 CORS_ORIGIN_WHITELIST = [
     'http://localhost:3000',
     'http://localhost:8000',
+    'http://localhost:8080',
 ]
 
 JWT_AUTH = {
