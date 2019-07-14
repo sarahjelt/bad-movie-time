@@ -99,6 +99,7 @@ class App extends Component {
           username: json.username,
           userid: json.id,
         });
+        console.log(this.state.userid, this.state.username);
       });
   };
 
