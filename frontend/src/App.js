@@ -95,11 +95,11 @@ class App extends Component {
         localStorage.setItem('token', json.token);
         this.setState({
           logged_in: true,
-          displayed_form: '',
+          displayed_form: 'login',
           username: json.username,
           userid: json.id,
         });
-        console.log(this.state.userid, this.state.username);
+        console.log(this.state.username);
       });
   };
 
