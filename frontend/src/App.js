@@ -50,7 +50,7 @@ class App extends Component {
         .then(res => res.json())
         .then(json => {
           // console.log(json.username, json.id);
-          this.setState({ username: json.username });
+          this.setState({ username: json.username, userid: json.id });
           this.refreshList();
           // console.log(`did mount ${this.state.userid}`);
         });
@@ -196,7 +196,6 @@ class App extends Component {
       console.log(this.state.userid);
   };
   handleDelete = item => {
-    // console.log('problem? 4.5')
     axios
       .delete(`/api/movies/${item.id}`, {headers: {
           Authorization: `Token ${localStorage.getItem('token')}`

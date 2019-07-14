@@ -24,7 +24,7 @@ REACT_APP_DIR = os.path.join(BASE_DIR,"..", "frontend")
 SECRET_KEY = '!)(bfkd1)i0r!zy!@6*n8tbl4p!6-2r+9z47j)gzp^p3@f79r5'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
     '0.0.0.0',
@@ -171,7 +171,7 @@ CORS_ORIGIN_WHITELIST = [
 ]
 
 JWT_AUTH = {
-    'JWT_EXPIRATION_DELTA': datetime.timedelta(seconds=525600),
+    'JWT_EXPIRATION_DELTA': datetime.timedelta(months=1),
     'JWT_AUTH_HEADER_PREFIX': 'Token',
     'JWT_RESPONSE_PAYLOAD_HANDLER': 'backend.utils.my_jwt_response_handler'
 }
