@@ -171,7 +171,7 @@ CORS_ORIGIN_WHITELIST = [
 ]
 
 JWT_AUTH = {
-    'JWT_EXPIRATION_DELTA': datetime.timedelta(months=1),
+    'JWT_EXPIRATION_DELTA': datetime.timedelta(seconds=2628000),
     'JWT_AUTH_HEADER_PREFIX': 'Token',
     'JWT_RESPONSE_PAYLOAD_HANDLER': 'backend.utils.my_jwt_response_handler'
 }
