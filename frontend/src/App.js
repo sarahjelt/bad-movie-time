@@ -94,7 +94,7 @@ class App extends Component {
       .then(json => {
         localStorage.setItem('token', json.token);
         this.setState({
-          logged_in: true,
+          logged_in: false,
           displayed_form: 'login',
           username: json.username,
           userid: json.id,
