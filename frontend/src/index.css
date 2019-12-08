@@ -25,6 +25,12 @@ body {
 .header div:first-child {
   margin: 1.5rem 0;
 }
+.no-user {
+  padding: 10vh 15vw;
+}
+.no-user img {
+  width: 100%;
+}
 #root {
   background: linear-gradient(
     to top right,

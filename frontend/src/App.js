@@ -256,7 +256,7 @@ class App extends Component {
         <h3>
           {this.state.logged_in
             ? `Hello, ${this.state.username}!`
-            : `Please log in`
+            : `Please log in!`
           }
         </h3>
         { this.state.logged_in ? (
@@ -296,7 +296,11 @@ class App extends Component {
             </div>
           </div>
         </div>
-        ) : null}
+        ) : (
+          <div className="no-user">
+            <img src="https://techcrunch.com/wp-content/uploads/2018/09/Screen-Shot-2018-09-22-at-11.24.40-AM.png" alt="Tommy Wiseau in The Room (2003)" />
+          </div>
+        )}
         {this.state.modal ? (
           <Modal
             activeItem={this.state.activeItem}

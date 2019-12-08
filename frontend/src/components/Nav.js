@@ -15,14 +15,14 @@ function Nav(props) {
     </ul>
   );
   return (
-    <div className="header">
+    <header className="header">
       <div>
         {props.logged_in ? logged_in_nav : logged_out_nav}
       </div>
       <div>
         <h1 className="text-white text-center my-4">BAD MOVIE TIME</h1>
       </div>
-    </div>
+    </header>
   )
 }
 
